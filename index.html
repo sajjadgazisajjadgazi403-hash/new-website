@@ -81,7 +81,6 @@ button.addEventListener("click",function(){
   li.innerText=text.value;
   localStorage.setItem("items",JSON.stringify(items));
   text.value="";
-  ul.append(li);
   refreshdata();
 })
 
