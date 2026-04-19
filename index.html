@@ -61,10 +61,11 @@ let editbtn=document.createElement("button");
 editbtn.innerText="edit";
 editbtn.addEventListener("click",function(){
   let newvalue=prompt("edit your task",item);
-  if(items[index]=newvalue){
+  if(newvalue!=""){
+    items[index]=newvalue;
     localStorage.setItem("items",JSON.stringify(items));
   }
-  refreshdata();
+    refreshdata();
 })
 
 li.append(checkbox);
@@ -76,12 +77,15 @@ ul.append(li);
 refreshdata();
 }
 button.addEventListener("click",function(){
+ if(text.value !=""){
     items.push(text.value);
   let li=document.createElement("li");
   li.innerText=text.value;
   localStorage.setItem("items",JSON.stringify(items));
   text.value="";
+  ul.append(li);
   refreshdata();
+ }
 })
 
 
